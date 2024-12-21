@@ -1,0 +1,22 @@
+{
+  "name": "e-gate",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./src/assets/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server ./src",
+    "watch": "npx tailwindcss -i ./src/assets/input.css -o ./src/assets/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "alpinejs-i18n": "^2.4.2"
+  }
+}

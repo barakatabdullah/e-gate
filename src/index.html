@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tabler icons set -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+    <!-- Styles -->
+    <link href="./assets/output.css" rel="stylesheet">
+
+    <title>E-Gate</title>
+
+    <!-- Alpine -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+
+<body>
+<!-- Navbar -->
+<nav x-data="{ open: false }"
+     class="absolute w-full top-0 left-0 right-0  z-50 bg-white shadow-xl h-[7.4rem] max-sm:h-[5rem]">
+    <div class="container relative z-10 flex items-center justify-between h-full px-8 mx-auto ">
+        <div class="h-[4.8rem] max-sm:h-[3.8rem]">
+            <img class="h-full" width="auto" src="./assets/logo/logo.png" alt="e-gate">
+        </div>
+
+        <div class="flex items-center gap-4 max-lg:hidden">
+            <button type="button"
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('home')">Home</span>
+            </button>
+            <button type="button"
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('services')">
+                        Services
+                    </span>
+            </button>
+            <button type="button"
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('requests')">Requests</span>
+            </button>
+            <button type="button"
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('approved_requests')">Approved Requests</span>
+            </button>
+            <button type="button"
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('financial_report')">Financial Report</span>
+            </button>
+
+        </div>
+
+
+        <div class="flex items-center gap-4 max-lg:hidden">
+            <button type="button"
+                    x-on:click="toggle"
+                    class="pointer-events-auto cursor-pointer hover:bg-primary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 ">
+                <span class="text-lg font-semibold" x-text="$t('lang')">English</span>
+                <i class="ti ti-world text-2xl"></i>
+            </button>
+            <button type="button"
+                    class="pointer-events-auto cursor-pointer rounded-lg bg-primary inline-block px-6 py-2 text-white font-semibold"
+                    x-text="$t('login')">Join
+                us
+            </button>
+
+
+        </div>
+
+        <button
+                x-on:click="open = !open"
+                type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 ">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+
+
+    </div>
+    <div class="w-full p-4 lg:hidden" x-show="open">
+        <ul class="bg-white font-medium flex flex-col p-4 mt-4 border border-gray-300 rounded-lg bg-gray-50 rtl:space-x-reverse">
+            <li
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('home')">Home</span>
+            </li>
+            <li
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('services')">
+                        Services
+                    </span>
+            </li>
+            <li
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('requests')">Requests</span>
+            </li>
+            <li
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('approved_requests')">Approved Requests</span>
+            </li>
+            <li
+                    class="pointer-events-auto cursor-pointer hover:bg-secondary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 group">
+                    <span class="text-lg font-semibold text-tertiary group-hover:text-secondary"
+                          x-text="$t('financial_report')">Financial Report</span>
+            </li>
+
+
+            <li
+                    class="pointer-events-auto cursor-pointer hover:bg-primary/5 rounded-lg py-2 px-4 text-primary flex items-center gap-2 ">
+                <span class="text-lg font-semibold" x-text="$t('lang')">English</span>
+                <i class="ti ti-world text-2xl"></i>
+            </li>
+            <li
+                    class="pointer-events-auto cursor-pointer rounded-lg bg-primary inline-block px-6 py-2 text-white font-semibold"
+                    x-text="$t('login')">Join
+                us
+            </li>
+
+
+        </ul>
+    </div>
+</nav>
+<!-- Navbar End-->
+
+<div class="opacity-5 h-full w-full absolute z-0 flex justify-center items-center pt-32">
+    <img class="h-full  object-cover" src="assets/logo/icon.png" alt="bg">
+</div>
+
+
+<main class="h-full w-full overflow-y-auto overflow-x-hidden relative ">
+    <div class="absolute bottom-0 right-0 w-1/3 h-2/3 bg-gradient-to-l from-transparent to-primary opacity-5 rounded-full max-lg:hidden "></div>
+    <div class="absolute top-0 left-0 w-1/3 h-2/3 aspect-square  bg-gradient-to-r from-transparent to-primary opacity-5 rounded-full max-lg:hidden"></div>
+
+    <section class="w-full h-full z-10">
+
+
+        <div x-data class="w-full h-full flex items-center justify-center max-sm:px-4">
+            <div class="bg-white w-1/3 max-xl:w-3/5 max-md:w-2/3 max-sm:w-full  h-64 rounded-xl border flex flex-col gap-4 items-center justify-center">
+                <h1 class="w-1/2 text-4xl font-bold text-secondary text-center" x-text="$t('hero.title')"></h1>
+
+                <li
+                        class="pointer-events-auto cursor-pointer hover:underline rounded-lg py-2 px-4 text-primary flex items-center gap-2 ">
+                    <span class="text-3xl font-semibold" x-text="$t('hero.description')"></span>
+                </li>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer class="bg-white w-full">
+        <div class="container mx-auto py-8 px-4">
+            <div class="flex justify-between items-center gap-4 max-md:flex-col">
+                <div>
+                    <img src="./assets/logo/logo.png" alt="logo" class="w-34">
+                    <p class="text-sm text-gray-500">
+                        Empowering Your Networked Solutions
+                    </p>
+                </div>
+                <div class="flex gap-4 items-center gap-4 max-md:flex-col">
+                    <a href="#" class="text-gray-700 hover:text-blue-500">Products</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500">Resources</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-500">Company</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t-2 border-gray-200 mt-8">
+            <div class="container mx-auto py-4 px-4 flex justify-between items-center">
+                <p class="text-xs text-gray-500">
+                    Copyright © 2024 Soft S. All rights reserved.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-500 hover:text-blue-500">
+                        <i class="ti ti-brand-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-blue-500">
+                        <i class="ti ti-brand-x"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-blue-500">
+                        <i class="ti ti-brand-linkedin"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</main>
+
+<script type="module" src="./assets/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs-i18n@2.x.x/dist/cdn.min.js"></script>
+<script defer>
+
+    let locale = localStorage.getItem('locale') || 'en';
+
+
+    let messages = {
+        en: {
+            lang: 'عربي',
+            login: 'Login',
+            home: 'Home',
+            services: 'Services',
+            requests: 'Requests',
+            approved_requests: 'Approved Requests',
+            financial_report: 'Financial Report',
+            hero:{
+                title:'The Electronic Portal for Mixed Marriage Requests',
+                description:'Apply Now'
+            }
+
+
+
+        },
+        ar: {
+            lang: 'English',
+            login: 'تسجيل الدخول',
+            home: 'الرئيسية',
+            services: 'الخدمات',
+            requests: 'الطلبات',
+            approved_requests: 'الطلبات الموافق عليها',
+            financial_report: 'التقرير المالي',
+            hero:{
+                title:'البوابة الإلكترونية لطلبات الزواج المختلط',
+                description:'قدم الآن'
+            }
+
+        },
+
+
+    };
+
+    document.addEventListener('alpine-i18n:ready', function () {
+        AlpineI18n.create(locale, messages);
+    });
+
+    var locales = ['en', 'ar'];
+    var current = 0;
+
+    function toggle() {
+        current++;
+        if (current >= locales.length) {
+            current = 0;
+        }
+
+        AlpineI18n.locale = locales[current];
+        localStorage.setItem('locale', locales[current]);
+    }
+
+    // listen to locale changes and update direction
+    document.addEventListener('alpine-i18n:locale-change', function () {
+        if (AlpineI18n.locale === 'ar') {
+            document.body.setAttribute('dir', 'rtl');
+        } else {
+            document.body.setAttribute('dir', 'ltr');
+        }
+    });
+</script>
+
+<!-- Tabler icons set -->
+<script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
+</body>
+
+</html>
